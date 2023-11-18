@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  audit:
+  release:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Repository
@@ -27,7 +27,7 @@ jobs:
     - name: Publish Theme
       env:
         VSCE_PAT: ${{ secrets.VSCE_PAT }}
-      run: pnpm publish
+      run: pnpm pub
 
     - name: Create Release
       env:

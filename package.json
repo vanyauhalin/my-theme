@@ -4,7 +4,7 @@
   "repository": "github:vanyauhalin/my-theme",
   "scripts": {
     "build": "./makefile.js build",
-    "publish": "vsce publish",
+    "pub": "vsce publish --no-dependencies",
     "release": "gh release create \"$(pnpm version --json | jq --raw-output .\"vanyauhalin-theme\")\" --generate-notes"
   },
   "type": "module",
