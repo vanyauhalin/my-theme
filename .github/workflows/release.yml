@@ -18,6 +18,9 @@ jobs:
     - name: Setup pnpm
       uses: pnpm/action-setup@v2
 
+    - name: Install VS Code Extension Manager
+      run: pnpm install --global vsce
+
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
 
