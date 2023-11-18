@@ -1,0 +1,9 @@
+.github
+.vscode
+node_modules
+src
+.gitignore
+.node-version
+.pnpm-version
+makefile.js
+pnpm-lock.yaml
