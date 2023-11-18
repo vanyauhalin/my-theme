@@ -1,0 +1,35 @@
+{
+  "name": "vanyauhalin-theme",
+  "version": "0.0.1",
+  "repository": "github:vanyauhalin/my-theme",
+  "scripts": {
+    "build": "./makefile.js build",
+    "publish": "vsce publish",
+    "release": "gh release create \"$(pnpm version --json | jq --raw-output .\"vanyauhalin-theme\")\" --generate-notes"
+  },
+  "type": "module",
+  "devDependencies": {
+    "color": "^4.2.3",
+    "sade": "^1.8.1"
+  },
+  "packageManager": "pnpm@8.10.5",
+  "engines": {
+    "node": "21.2.0",
+    "vscode": "^1.80.0"
+  },
+
+  "displayName": "Vanya's Theme",
+  "publisher": "vanyauhalin",
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Vanya's Light",
+        "uiTheme": "vs",
+        "path": "./dist/light.json"
+      }
+    ]
+  }
+}

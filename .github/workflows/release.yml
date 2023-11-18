@@ -1,0 +1,35 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Node
+      uses: actions/setup-node@v3
+      with:
+        node-version-file: "package.json"
+
+    - name: Setup pnpm
+      uses: pnpm/action-setup@v2
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: Build Theme
+      run: pnpm build
+
+    - name: Publish Theme
+      env:
+        VSCE_PAT: ${{ secrets.VSCE_PAT }}
+      run: pnpm publish
+
+    - name: Create Release
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: pnpm release
