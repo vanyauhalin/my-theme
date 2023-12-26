@@ -5,6 +5,7 @@ import { join } from "node:path"
 import { argv } from "node:process"
 import sade from "sade"
 import { light } from "./src/colors/themes.js"
+import * as docker from "./src/syntaxes/docker.js"
 import * as html from "./src/syntaxes/html.js"
 import * as ini from "./src/syntaxes/ini.js"
 import * as javascript from "./src/syntaxes/javascript.js"
@@ -33,6 +34,7 @@ make
       }
     ]
     const syntaxes = [
+      docker.tokenColors,
       html.tokenColors,
       ini.tokenColors,
       javascript.tokenColors,
