@@ -8,6 +8,7 @@ import { light } from "./src/colors/themes.js"
 import * as html from "./src/syntaxes/html.js"
 import * as javascript from "./src/syntaxes/javascript.js"
 import * as typescript from "./src/syntaxes/typescript.js"
+import * as yaml from "./src/syntaxes/yaml.js"
 import * as editor from "./src/editor.js"
 
 const root = new URL(".", import.meta.url).pathname
@@ -28,7 +29,8 @@ make
     const syntaxes = [
       html.tokenColors,
       javascript.tokenColors,
-      typescript.tokenColors
+      typescript.tokenColors,
+      yaml.tokenColors
     ]
     await mkdir(dist, { recursive: true })
     await Promise.all(themes.map(async (theme) => {
