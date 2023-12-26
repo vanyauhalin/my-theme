@@ -1,6 +1,5 @@
-/**
- * [VSCode Reference](https://github.com/microsoft/vscode/tree/1.80.0/extensions/javascript)
- */
+// https://github.com/microsoft/vscode/tree/1.80.0/extensions/javascript
+
 function javascript(syntax) {
   const a0 = syntax.action[0]
   const c0 = syntax.composition[0]

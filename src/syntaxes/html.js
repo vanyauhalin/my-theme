@@ -1,6 +1,5 @@
-/**
- * [VSCode Reference](https://github.com/microsoft/vscode/tree/1.80.0/extensions/html)
- */
+// https://github.com/microsoft/vscode/tree/1.80.0/extensions/html
+
 function html(syntax) {
   const p0 = syntax.plain[0]
   const p1 = syntax.plain[1]
