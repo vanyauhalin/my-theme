@@ -7,6 +7,7 @@ import sade from "sade"
 import { light } from "./src/colors/themes.js"
 import * as html from "./src/syntaxes/html.js"
 import * as javascript from "./src/syntaxes/javascript.js"
+import * as makefile from "./src/syntaxes/makefile.js"
 import * as toml from "./src/syntaxes/toml.js"
 import * as typescript from "./src/syntaxes/typescript.js"
 import * as yaml from "./src/syntaxes/yaml.js"
@@ -30,6 +31,7 @@ make
     const syntaxes = [
       html.tokenColors,
       javascript.tokenColors,
+      makefile.tokenColors,
       toml.tokenColors,
       typescript.tokenColors,
       yaml.tokenColors
