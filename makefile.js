@@ -6,6 +6,7 @@ import { argv } from "node:process"
 import sade from "sade"
 import { light } from "./src/colors/themes.js"
 import * as html from "./src/syntaxes/html.js"
+import * as ini from "./src/syntaxes/ini.js"
 import * as javascript from "./src/syntaxes/javascript.js"
 import * as json from "./src/syntaxes/json.js"
 import * as jsonc from "./src/syntaxes/jsonc.js"
@@ -33,6 +34,7 @@ make
     ]
     const syntaxes = [
       html.tokenColors,
+      ini.tokenColors,
       javascript.tokenColors,
       json.tokenColors,
       jsonc.tokenColors,
