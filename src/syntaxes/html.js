@@ -7,7 +7,7 @@ function html(syntax) {
   const p2 = syntax.plain[2]
   const p3 = syntax.plain[3]
   const s1 = syntax.string[1]
-  
+
   return {
     "comment.block.html": p0,
     "entity.other.attribute-name.html": p1,
