@@ -1,6 +1,6 @@
 // https://github.com/microsoft/vscode/tree/1.80.0/extensions/javascript
 
-function javascript(syntax) {
+function tokenColors(syntax) {
   const a0 = syntax.action[0]
   const c0 = syntax.composition[0]
   const p0 = syntax.plain[0]
@@ -223,4 +223,4 @@ function javascript(syntax) {
   }
 }
 
-export { javascript }
+export { tokenColors }

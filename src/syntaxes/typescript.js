@@ -1,9 +1,9 @@
 import { port } from "../port.js"
-import { javascript } from "./javascript.js"
+import * as javascript from "./javascript.js"
 
-function typescript(syntax) {
-  const scopes = javascript(syntax)
+function tokenColors(syntax) {
+  const scopes = javascript.tokenColors(syntax)
   return port(scopes, ".ts", ".tsx")
 }
 
-export { typescript }
+export { tokenColors }

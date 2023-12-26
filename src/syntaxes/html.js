@@ -1,6 +1,6 @@
 // https://github.com/microsoft/vscode/tree/1.80.0/extensions/html
 
-function html(syntax) {
+function tokenColors(syntax) {
   const p0 = syntax.plain[0]
   const p1 = syntax.plain[1]
   const p2 = syntax.plain[2]
@@ -683,4 +683,4 @@ function html(syntax) {
   }
 }
 
-export { html }
+export { tokenColors }

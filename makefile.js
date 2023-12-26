@@ -5,9 +5,9 @@ import { join } from "node:path"
 import { argv } from "node:process"
 import sade from "sade"
 import { light } from "./src/colors/themes.js"
-import { html } from "./src/syntaxes/html.js"
-import { javascript } from "./src/syntaxes/javascript.js"
-import { typescript } from "./src/syntaxes/typescript.js"
+import * as html from "./src/syntaxes/html.js"
+import * as javascript from "./src/syntaxes/javascript.js"
+import * as typescript from "./src/syntaxes/typescript.js"
 import * as editor from "./src/editor.js"
 
 const root = new URL(".", import.meta.url).pathname
@@ -26,9 +26,9 @@ make
       }
     ]
     const syntaxes = [
-      html,
-      javascript,
-      typescript
+      html.tokenColors,
+      javascript.tokenColors,
+      typescript.tokenColors
     ]
     await mkdir(dist, { recursive: true })
     await Promise.all(themes.map(async (theme) => {
