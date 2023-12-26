@@ -12,6 +12,7 @@ function javascript(syntax) {
   const s1 = syntax.string[1]
 
   return {
+    "comment.block.documentation.js source.embedded.ts": p0,
     "comment.block.documentation.js": p0,
     "comment.block.js": p0,
     "comment.line.double-slash.js": p0,
