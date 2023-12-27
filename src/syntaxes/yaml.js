@@ -56,4 +56,8 @@ function tokenColors(syntax) {
   }
 }
 
-export { tokenColors }
+function semanticTokenColors() {
+  return {}
+}
+
+export { tokenColors, semanticTokenColors }

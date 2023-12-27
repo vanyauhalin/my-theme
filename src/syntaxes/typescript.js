@@ -6,4 +6,8 @@ function tokenColors(syntax) {
   return port(scopes, ".ts", ".tsx")
 }
 
-export { tokenColors }
+function semanticTokenColors() {
+  return {}
+}
+
+export { tokenColors, semanticTokenColors }

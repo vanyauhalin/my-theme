@@ -6,4 +6,8 @@ function tokenColors(syntax) {
   return port(scopes, ".json.lines")
 }
 
-export { tokenColors }
+function semanticTokenColors() {
+  return {}
+}
+
+export { tokenColors, semanticTokenColors }

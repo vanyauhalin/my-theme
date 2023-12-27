@@ -34,44 +34,51 @@ make
       }
     ]
     const syntaxes = [
-      docker.tokenColors,
-      html.tokenColors,
-      ini.tokenColors,
-      javascript.tokenColors,
-      json.tokenColors,
-      jsonc.tokenColors,
-      jsonl.tokenColors,
-      makefile.tokenColors,
-      toml.tokenColors,
-      typescript.tokenColors,
-      yaml.tokenColors
+      docker,
+      html,
+      ini,
+      javascript,
+      json,
+      jsonc,
+      jsonl,
+      makefile,
+      toml,
+      typescript,
+      yaml
     ]
     await mkdir(dist, { recursive: true })
     await Promise.all(themes.map(async (theme) => {
-      const cache = {}
+      const tokenColors = {}
+      const semanticTokenColors = {}
       await Promise.all(syntaxes.map(async (syntax) => {
-        const result = syntax(theme.syntax)
-        Object.entries(result).forEach(([scope, color]) => {
-          if (!cache[color]) {
-            cache[color] = {
+        const a = syntax.tokenColors(theme.syntax)
+        Object.entries(a).forEach(([scope, color]) => {
+          if (!tokenColors[color]) {
+            tokenColors[color] = {
               scope: [],
               settings: {
                 foreground: color
               }
             }
           }
-          cache[color].scope.push(scope)
+          tokenColors[color].scope.push(scope)
+        })
+        const b = syntax.semanticTokenColors(theme.syntax)
+        Object.entries(b).forEach(([scope, color]) => {
+          semanticTokenColors[scope] = {
+            foreground: color
+          }
         })
       }))
-      const colors = editor.colors(theme.editor)
-      const tokenColors = Object.values(cache)
-      const result = {
+      const object = {
         name: theme.name,
-        colors,
-        tokenColors
+        colors: editor.colors(theme.editor),
+        tokenColors: Object.values(tokenColors),
+        semanticHighlighting: true,
+        semanticTokenColors
       }
       const file = join(dist, `${theme.id}.json`)
-      const content = JSON.stringify(result, undefined, 2)
+      const content = JSON.stringify(object, undefined, 2)
       await writeFile(file, content)
     }))
   })
