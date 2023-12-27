@@ -6,6 +6,7 @@ import { argv } from "node:process"
 import sade from "sade"
 import { light } from "./src/colors/themes.js"
 import * as docker from "./src/syntaxes/docker.js"
+import * as go from "./src/syntaxes/go.js"
 import * as html from "./src/syntaxes/html.js"
 import * as ini from "./src/syntaxes/ini.js"
 import * as javascript from "./src/syntaxes/javascript.js"
@@ -35,6 +36,7 @@ make
     ]
     const syntaxes = [
       docker,
+      go,
       html,
       ini,
       javascript,
