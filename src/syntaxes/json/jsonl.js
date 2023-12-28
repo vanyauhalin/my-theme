@@ -1,4 +1,4 @@
-import { port } from "../port.js"
+import { port } from "../../port.js"
 import * as json from "./json.js"
 
 function tokenColors(syntax) {
