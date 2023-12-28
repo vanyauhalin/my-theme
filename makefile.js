@@ -14,6 +14,7 @@ import * as json from "./src/syntaxes/json.js"
 import * as jsonc from "./src/syntaxes/jsonc.js"
 import * as jsonl from "./src/syntaxes/jsonl.js"
 import * as makefile from "./src/syntaxes/makefile.js"
+import * as ruby from "./src/syntaxes/ruby.js"
 import * as toml from "./src/syntaxes/toml.js"
 import * as typescript from "./src/syntaxes/typescript.js"
 import * as yaml from "./src/syntaxes/yaml.js"
@@ -44,6 +45,7 @@ make
       jsonc,
       jsonl,
       makefile,
+      ruby,
       toml,
       typescript,
       yaml
